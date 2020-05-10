@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module RSpec::Buildkite
   module Recolorizer
     module_function
@@ -7,11 +9,11 @@ module RSpec::Buildkite
     def recolorize(string)
       level = 0
       string.gsub(/\e\[(\d+(?:;\d+)*)m/) do
-        "".tap do |buffer|
+        ''.tap do |buffer|
           codes = $1.split(";").map(&:to_i)
 
           classes = []
-          while code = codes.shift
+          while (code = codes.shift)
             case code
             when 0
               classes.clear
@@ -44,7 +46,7 @@ module RSpec::Buildkite
 
           if classes.any?
             level += 1
-            buffer << %{<span class=#{classes.map { |klass| klass }.join(" ").encode(:xml => :attr)}>}
+            buffer << %{<span class=#{classes.map { |klass| klass }.join(' ').encode(xml: :attr)}>}
           end
         end
       end << ("</span>" * level)

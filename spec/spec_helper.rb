@@ -1,3 +1,5 @@
+require 'rspec'
+require 'rspec/its'
 require "bundler/setup"
 require "coderay"
 require "rspec/buildkite"

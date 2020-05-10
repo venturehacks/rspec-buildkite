@@ -2,3 +2,5 @@ steps:
   - command: bundle exec rake
     env:
       BUNDLE_AUTO_INSTALL: true
+    notify:
+      - github_check
