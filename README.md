@@ -1,3 +1,5 @@
+![Ruby](https://github.com/venturehacks/rspec-buildkite/workflows/Ruby/badge.svg)
+
 # RSpec Buildkite
 
 Output [RSpec][rspec] failure messages as [Buildkite annotations][buildkite-annotations] as soon as they happen so you can fix them while your build finishes.
